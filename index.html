@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly English learning companion with Tamil support, grammar practice, vocabulary, quizzes and pronunciation.">
+  <title>AI Language Learning Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-icon">Aa</span><span>Language<span class="brand-accent">Buddy</span><small>AI LANGUAGE LEARNING COMPANION</small></span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+  <nav id="mainNav">
+    <a href="#home">Home</a><a href="#plan">14-Day Plan</a><a href="#grammar">Grammar</a>
+    <a href="#vocabulary">Vocabulary</a><a href="#quiz">Quiz</a><a href="#pronunciation">Audio</a>
+    <a href="#ai-tools">AI Tools</a><a href="#report">Project Report</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <span class="eyebrow">YOUR FRIENDLY ENGLISH PRACTICE PARTNER</span>
+    <h1>Small steps today.<br><span>Confident English</span> tomorrow.</h1>
+    <p>Practise basic English with simple grammar activities, English–Tamil vocabulary, quizzes and pronunciation support.</p>
+    <div class="hero-actions"><a class="button primary" href="#plan">Start learning →</a><a class="button secondary" href="#about">Explore project</a></div>
+    <div class="hero-note">✓ Beginner friendly &nbsp; ✓ Tamil meanings &nbsp; ✓ Learn at your own pace</div>
+  </div>
+  <div class="hero-art" aria-label="Illustration of learning cards">
+    <div class="floating-card card-one"><span>📚</span><b>Learn new words</b><small>வார்த்தைகள் கற்போம்</small></div>
+    <div class="book-illustration"><div class="book-page"><span>HELLO!</span><b>How are you?</b><small>நீங்கள் எப்படி இருக்கிறீர்கள்?</small><i>✦ &nbsp; ✦ &nbsp; ✦</i></div></div>
+    <div class="floating-card card-two"><span>🎯</span><b>Daily practice</b><small>15–20 minutes</small></div>
+  </div>
+</section>
+
+<section class="stats" aria-label="Website features">
+  <div><strong>14</strong><span>Days of practice</span></div><div><strong>10</strong><span>Quiz questions</span></div>
+  <div><strong>20+</strong><span>Useful words</span></div><div><strong>3</strong><span>AI tools to compare</span></div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-heading"><span class="eyebrow">ABOUT THE CAPSTONE</span><h2>Learn, practise and verify</h2><p>This project explores whether free AI tools can support safe and accurate beginner-level language practice.</p></div>
+  <div class="three-cards">
+    <article class="info-card"><div class="icon lavender">🎯</div><h3>Project objective</h3><p>Evaluate AI tools for basic English conversation, vocabulary and grammar correction.</p></article>
+    <article class="info-card"><div class="icon mint">🧠</div><h3>Learning approach</h3><p>Use short practice tasks, clear explanations, quizzes and English–Tamil support.</p></article>
+    <article class="info-card"><div class="icon peach">🛡️</div><h3>Responsible AI</h3><p>Check AI answers with trusted references and avoid blindly trusting generated content.</p></article>
+  </div>
+</section>
+
+<section class="section tinted" id="plan">
+  <div class="section-heading"><span class="eyebrow">YOUR TWO-WEEK JOURNEY</span><h2>14-Day English Practice Plan</h2><p>Try to practise for 15–20 minutes every day. Tick a day when you finish it.</p></div>
+  <div class="plan-grid" id="planGrid"></div>
+  <p class="small-note">Your checkmarks are saved in this browser on this device.</p>
+</section>
+
+<section class="section" id="grammar">
+  <div class="section-heading"><span class="eyebrow">PRACTISE WITH EXAMPLES</span><h2>Grammar practice</h2><p>Enter a sentence to check a few common beginner-level patterns.</p></div>
+  <div class="workspace grammar-workspace">
+    <label for="grammarInput">Your English sentence</label>
+    <textarea id="grammarInput" rows="3" placeholder="Example: yesterday i ate apple"></textarea>
+    <button class="button primary" id="grammarButton">Check sentence</button>
+    <div id="grammarResult" class="result" aria-live="polite">Your suggested correction will appear here.</div>
+    <p class="small-note">This demo uses a small set of rules, not a full AI grammar engine. It may miss mistakes or suggest an incomplete correction.</p>
+    <div class="examples"><button class="example-chip" data-sentence="She go to school every day.">Try: She go to school every day.</button><button class="example-chip" data-sentence="I is a student.">Try: I is a student.</button><button class="example-chip" data-sentence="They is happy.">Try: They is happy.</button></div>
+  </div>
+</section>
+
+<section class="section tinted" id="vocabulary">
+  <div class="section-heading"><span class="eyebrow">WORDS FOR EVERYDAY LIFE</span><h2>English–Tamil vocabulary</h2><p>Search for a word or a Tamil meaning and learn with a simple example.</p></div>
+  <div class="vocab-tools"><input id="vocabSearch" type="search" placeholder="Search English or Tamil..." aria-label="Search vocabulary"><select id="vocabCategory" aria-label="Filter vocabulary"><option value="all">All categories</option><option value="Daily life">Daily life</option><option value="Feelings">Feelings</option><option value="Study">Study</option><option value="Conversation">Conversation</option></select></div>
+  <div class="vocab-grid" id="vocabGrid"></div>
+</section>
+
+<section class="section" id="quiz">
+  <div class="section-heading"><span class="eyebrow">CHECK YOUR LEARNING</span><h2>Beginner English quiz</h2><p>Choose one answer for each question. You will see your score and answer explanations.</p></div>
+  <div class="workspace">
+    <div class="quiz-top"><span id="quizProgress">Question 1 of 10</span><span class="pill">10 questions</span></div>
+    <div class="progress-track"><div id="quizProgressBar"></div></div>
+    <div id="quizArea"></div>
+    <div class="quiz-actions"><button class="button secondary" id="prevQuestion">← Previous</button><button class="button primary" id="nextQuestion">Next →</button></div>
+    <div id="quizResult" class="result" aria-live="polite"></div>
+    <button class="button primary hidden" id="restartQuiz">Try again</button>
+  </div>
+</section>
+
+<section class="section tinted" id="pronunciation">
+  <div class="section-heading"><span class="eyebrow">LISTEN AND REPEAT</span><h2>Pronunciation practice</h2><p>Use your browser's available text-to-speech voice to listen to an English phrase.</p></div>
+  <div class="workspace audio-workspace">
+    <label for="speechText">Choose a phrase</label>
+    <select id="speechText">
+      <option>Hello, how are you?</option><option>My name is Riya.</option><option>I am learning English.</option><option>Could you please help me?</option><option>Thank you very much.</option><option>Yesterday, I ate an apple.</option>
+    </select>
+    <div class="audio-buttons"><button class="button primary" id="speakButton">▶ Listen</button><button class="button secondary" id="stopSpeakButton">■ Stop</button></div>
+    <p id="speechStatus" class="small-note" aria-live="polite">Audio availability depends on your browser and device.</p>
+    <div class="compare-note"><b>Project evidence tip:</b> Compare a browser-generated pronunciation with a trusted dictionary or a proficient speaker. Record the phrase, source, differences and your observations in your audio evidence file.</div>
+  </div>
+</section>
+
+<section class="section" id="ai-tools">
+  <div class="section-heading"><span class="eyebrow">PROMPT ENGINEERING</span><h2>AI tools and prompt library</h2><p>Use the same prompts with ChatGPT, Gemini and Claude for a fair comparison.</p></div>
+  <div class="three-cards tool-cards">
+    <article class="info-card"><div class="icon lavender">🤖</div><h3>ChatGPT</h3><p>Ask for simple grammar corrections, examples and conversation practice.</p><a class="text-link" href="https://chatgpt.com/" target="_blank" rel="noopener">Open ChatGPT ↗</a></article>
+    <article class="info-card"><div class="icon mint">✨</div><h3>Google Gemini</h3><p>Compare its explanations, translations and beginner-friendly examples.</p><a class="text-link" href="https://gemini.google.com/" target="_blank" rel="noopener">Open Gemini ↗</a></article>
+    <article class="info-card"><div class="icon peach">💬</div><h3>Claude</h3><p>Test how it explains grammar and supports short practice dialogues.</p><a class="text-link" href="https://claude.ai/" target="_blank" rel="noopener">Open Claude ↗</a></article>
+  </div>
+  <div class="prompt-list">
+    <div class="prompt-item"><div><b>Prompt 1 — Conversation</b><p>Act as a kind English tutor for a beginner. Ask me one simple daily-life question at a time. Correct my answer politely, explain the correction in simple English, and give a Tamil meaning.</p></div><button class="button secondary copy-prompt">Copy prompt</button></div>
+    <div class="prompt-item"><div><b>Prompt 2 — Grammar correction</b><p>Check this sentence for grammar and spelling. Show the original sentence, corrected sentence, a short explanation, and Tamil translation. If it is already correct, tell me. Sentence: [paste sentence]</p></div><button class="button secondary copy-prompt">Copy prompt</button></div>
+    <div class="prompt-item"><div><b>Prompt 3 — Vocabulary</b><p>Teach me 10 beginner English words about [topic]. Give the Tamil meaning, one simple example sentence, and a short practice question for each word.</p></div><button class="button secondary copy-prompt">Copy prompt</button></div>
+    <div class="prompt-item"><div><b>Prompt 4 — Quiz</b><p>Create 10 beginner English grammar multiple-choice questions with four options, an answer key, simple explanations and Tamil translations. Check the answers carefully.</p></div><button class="button secondary copy-prompt">Copy prompt</button></div>
+  </div>
+  <p class="small-note">The website links to external AI tools; it does not send prompts to them automatically or claim that an AI API is connected.</p>
+</section>
+
+<section class="section tinted" id="comparison">
+  <div class="section-heading"><span class="eyebrow">YOUR EXPERIMENT</span><h2>AI tool comparison log</h2><p>Enter your observations after testing all three tools on the same 10 sentences.</p></div>
+  <div class="workspace">
+    <p class="small-note">These are blank fields for your real results. Do not invent ratings—fill them after testing.</p>
+    <div class="table-wrap"><table><thead><tr><th>Measure</th><th>ChatGPT</th><th>Gemini</th><th>Claude</th></tr></thead><tbody>
+      <tr><th>Grammar accuracy (out of 10)</th><td><input class="rating" type="number" min="0" max="10" aria-label="ChatGPT grammar accuracy"></td><td><input class="rating" type="number" min="0" max="10" aria-label="Gemini grammar accuracy"></td><td><input class="rating" type="number" min="0" max="10" aria-label="Claude grammar accuracy"></td></tr>
+      <tr><th>Tamil translation quality (1–5)</th><td><input class="rating" type="number" min="1" max="5" aria-label="ChatGPT translation rating"></td><td><input class="rating" type="number" min="1" max="5" aria-label="Gemini translation rating"></td><td><input class="rating" type="number" min="1" max="5" aria-label="Claude translation rating"></td></tr>
+      <tr><th>Explanation clarity (1–5)</th><td><input class="rating" type="number" min="1" max="5" aria-label="ChatGPT clarity rating"></td><td><input class="rating" type="number" min="1" max="5" aria-label="Gemini clarity rating"></td><td><input class="rating" type="number" min="1" max="5" aria-label="Claude clarity rating"></td></tr>
+      <tr><th>Mistakes / observations</th><td><textarea aria-label="ChatGPT observations"></textarea></td><td><textarea aria-label="Gemini observations"></textarea></td><td><textarea aria-label="Claude observations"></textarea></td></tr>
+    </tbody></table></div>
+    <button class="button primary" id="saveComparison">Save comparison in this browser</button><span id="comparisonStatus" class="small-note"></span>
+    <p class="small-note">This table saves locally in this browser. It does not automatically export to your project report.</p>
+  </div>
+</section>
+
+<section class="section" id="verification">
+  <div class="section-heading"><span class="eyebrow">RESPONSIBLE AI</span><h2>Verification report checklist</h2><p>Use this checklist for each AI-generated answer you evaluate.</p></div>
+  <div class="three-cards">
+    <article class="info-card"><div class="icon mint">🔎</div><h3>Cross-check</h3><p>Compare grammar or pronunciation with a trusted dictionary, grammar reference or proficient speaker.</p></article>
+    <article class="info-card"><div class="icon lavender">🧾</div><h3>Record evidence</h3><p>Save the original prompt, AI answer, corrected answer, source used and any differences.</p></article>
+    <article class="info-card"><div class="icon peach">⚠️</div><h3>Know the limits</h3><p>AI may miss cultural nuance, use an unsuitable dialect, or sound confident while being wrong.</p></article>
+  </div>
+  <div class="workspace checklist">
+    <label><input type="checkbox"> I used the same test sentence for each AI tool.</label>
+    <label><input type="checkbox"> I checked the correction against a trusted reference.</label>
+    <label><input type="checkbox"> I recorded translation or grammar mistakes.</label>
+    <label><input type="checkbox"> I did not treat AI output as automatically correct.</label>
+  </div>
+</section>
+
+<section class="section tinted" id="analysis">
+  <div class="section-heading"><span class="eyebrow">MEASURE YOUR PROGRESS</span><h2>Before and after analysis</h2><p>Enter your actual scores from the first and final quiz to compare progress.</p></div>
+  <div class="workspace analysis-grid">
+    <div><label for="beforeScore">Before practice (out of 10)</label><input id="beforeScore" type="number" min="0" max="10" value="0"></div>
+    <div><label for="afterScore">After practice (out of 10)</label><input id="afterScore" type="number" min="0" max="10" value="0"></div>
+    <button class="button primary" id="analyseButton">Compare scores</button>
+    <div id="analysisResult" class="result full-width" aria-live="polite">Enter your real scores to see the difference.</div>
+  </div>
+  <p class="small-note">Use your own recorded scores. The example quiz score on this website is not evidence of real learning improvement.</p>
+</section>
+
+<section class="section" id="poster">
+  <div class="section-heading"><span class="eyebrow">VISUAL VOCABULARY</span><h2>Illustrated vocabulary poster</h2><p>A quick visual reminder of useful everyday words.</p></div>
+  <div class="poster">
+    <div class="poster-title">MY EVERYDAY ENGLISH <span>வார்த்தைகள் கற்போம்!</span></div>
+    <div class="poster-grid">
+      <div><span>🌞</span><b>Sun</b><small>சூரியன்</small></div><div><span>📖</span><b>Book</b><small>புத்தகம்</small></div>
+      <div><span>💧</span><b>Water</b><small>தண்ணீர்</small></div><div><span>🏠</span><b>Home</b><small>வீடு</small></div>
+      <div><span>❤️</span><b>Happy</b><small>மகிழ்ச்சி</small></div><div><span>🌱</span><b>Learn</b><small>கற்றுக்கொள்</small></div>
+    </div>
+    <p>Listen • Repeat • Use it in a sentence</p>
+  </div>
+</section>
+
+<section class="section tinted" id="report">
+  <div class="section-heading"><span class="eyebrow">CAPSTONE SUMMARY</span><h2>Project report outline</h2><p>Use these headings when preparing your separate final report and demo.</p></div>
+  <div class="report-outline">
+    <div><b>01</b><span><strong>Introduction & problem statement</strong><small>Why beginners need accessible language practice.</small></span></div>
+    <div><b>02</b><span><strong>Objectives & tools used</strong><small>Target language, beginner level and at least four free-tier tools used in your work.</small></span></div>
+    <div><b>03</b><span><strong>Methodology & 14-day plan</strong><small>Prompts, same 10 sentences, and testing method.</small></span></div>
+    <div><b>04</b><span><strong>Results & mistake log</strong><small>Actual tool comparison, vocabulary sheet and quiz answer key.</small></span></div>
+    <div><b>05</b><span><strong>Audio, poster & prompt library</strong><small>Include samples and evidence you actually created.</small></span></div>
+    <div><b>06</b><span><strong>Verification, limitations & conclusion</strong><small>Cross-checking, dialect and cultural nuance, over-trust and learning progress.</small></span></div>
+  </div>
+  <div class="final-note"><b>Remember:</b> this website is a demonstration aid. Keep separate files for your practice plan, mistake log, vocabulary sheet, quiz, audio samples, poster, prompt library, verification report and before/after analysis.</div>
+</section>
+</main>
+
+<footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-icon">Aa</span><span>Language<span class="brand-accent">Buddy</span><small>AI LANGUAGE LEARNING COMPANION</small></span></a><p>Capstone Project • Value-Added Course • 2026</p><p class="footer-small">Learning support only. Always verify AI-generated language advice.</p></footer>
+<div id="toast" role="status" aria-live="polite" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
